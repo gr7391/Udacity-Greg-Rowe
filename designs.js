@@ -1,4 +1,13 @@
+// Your code goes here!
+// Select color input
+
 var color = "";
+
+/* JavaScript function to create the grid when the submit button is clicked.
+ * It takes in whole number height and whole number width of the grid from the
+ * html form and creates the grid on the table canvas element in html page
+ * based on the users input.
+ */
 
 var sizePicker = document.querySelector("#sizePicker");
 sizePicker.addEventListener("submit", function (event) {
@@ -9,7 +18,7 @@ sizePicker.addEventListener("submit", function (event) {
     var width = widthElement.value;
     makeGrid(height, width);
 })
-
+// Table grid creation code :
 function makeGrid(h, w) {
     var x = 1;
     var t = "table" + x;
@@ -20,6 +29,9 @@ function makeGrid(h, w) {
         t = "table" + x;
         row = document.getElementById(t);
     }
+
+// Each cell should have an event listener that sets the background color of
+// the cell to the selected color.
 
     var table = document.querySelector("#pixelCanvas");
     for (var i = 1; i <= h; i++) {
@@ -44,3 +56,4 @@ function makeGrid(h, w) {
         }
     })
 }
+// special thanks to examples and walk throughs on github, Code Pen, stack overflow, and code.sololearn.
